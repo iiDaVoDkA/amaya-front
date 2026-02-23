@@ -26,6 +26,12 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
+      - name: Patch ajv-keywords for ajv 8 compatibility
+        run: |
+          find node_modules -path '*ajv-keywords/keywords/_formatLimit.js' -type f | while read F; do
+            sed -i.bak 's/var format = formats\[name\];/var format = (formats \&\& formats[name]) || null;/' "$F" && rm -f "${F}.bak"
+          done
+
       - name: Build React app
         run: CI=false npm run build
 

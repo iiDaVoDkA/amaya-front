@@ -41,5 +41,8 @@
   "devDependencies": {
     "react-scripts": "5.0.1"
   },
-  "proxy": "http://localhost:5001"
+  "proxy": "http://localhost:5001",
+  "overrides": {
+    "ajv": "^8.12.0"
+  }
 }
