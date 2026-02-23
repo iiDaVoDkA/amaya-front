@@ -1,0 +1,139 @@
+.newsletter-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  padding: var(--spacing-md);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.newsletter-popup {
+  background: var(--soft-beige);
+  border-radius: var(--radius-xl);
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-xl);
+  animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.newsletter-popup-close {
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--medium-gray);
+  cursor: pointer;
+  padding: var(--spacing-xs);
+  transition: all var(--transition-normal);
+  border-radius: var(--radius-full);
+}
+
+.newsletter-popup-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--dark-gray);
+}
+
+.newsletter-popup-content {
+  text-align: center;
+}
+
+.newsletter-popup-content h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: var(--sage-green);
+  margin-bottom: var(--spacing-md);
+}
+
+.newsletter-popup-content p {
+  color: var(--medium-gray);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.6;
+}
+
+.newsletter-popup-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.newsletter-popup-form input {
+  padding: var(--spacing-md);
+  border: 2px solid var(--light-gray);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  transition: all var(--transition-normal);
+  background: var(--white);
+}
+
+.newsletter-popup-form input:focus {
+  outline: none;
+  border-color: var(--sage-green);
+}
+
+.newsletter-popup-form button {
+  padding: var(--spacing-md);
+  background: var(--sage-green);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.newsletter-popup-form button:hover {
+  background: var(--taupe);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.newsletter-popup-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.newsletter-popup-disclaimer {
+  font-size: 0.75rem;
+  color: var(--medium-gray);
+  font-style: italic;
+  margin: 0;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .newsletter-popup {
+    padding: var(--spacing-lg);
+    max-width: 90%;
+  }
+
+  .newsletter-popup-content h2 {
+    font-size: 1.5rem;
+  }
+}

@@ -1,0 +1,9 @@
+# Don't ignore public assets
+!*.png
+!*.jpg
+!*.jpeg
+!*.svg
+!*.ico
+!*.json
+!*.html
+!images/
